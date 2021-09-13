@@ -1,0 +1,42 @@
+
+
+<div class="h-100 loginBackground">
+  <div class="row h-100 justify-content-center align-items-center">
+   
+    <div class="col-9 col-sm-5 col-md-5 col-lg-4 col-xl-4">
+
+      <mat-card>
+  
+        <mat-toolbar color="primary">Login Page</mat-toolbar>
+    
+          <form class="loginform" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+  
+            <div class="d-flex flex-column">
+             
+              <mat-form-field appearance="fill">
+                <mat-label>Cui</mat-label>
+                <input matInput placeholder="Ingrese cui" value="" autocomplete="off" formControlName="cui">
+              </mat-form-field>
+      
+              <mat-form-field appearance="fill">
+                <mat-label>Clave</mat-label>
+                <input matInput placeholder="Ingrese clave" type="password" value="" formControlName="clave">
+              </mat-form-field>
+      
+              <button type="submit" mat-raised-button color="primary">Login</button>
+              
+  
+            </div>
+    
+           
+    
+    
+          </form>
+    
+      </mat-card>
+
+    </div>
+
+    
+  </div>
+</div>
