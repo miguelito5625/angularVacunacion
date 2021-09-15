@@ -20,6 +20,7 @@ import { PrincipalAdminComponent } from './paginas/admin/principal-admin/princip
 import { ToolbarAdminComponent } from './paginas/admin/toolbar-admin/toolbar-admin.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { HelloAdminComponent } from './paginas/admin/hello-admin/hello-admin.component';
+import { CrearVacunasComponent } from './paginas/admin/vacunas/crear-vacunas/crear-vacunas.component';
 
 
 
@@ -29,7 +30,8 @@ import { HelloAdminComponent } from './paginas/admin/hello-admin/hello-admin.com
     LoginPageComponent,
     PrincipalAdminComponent,
     ToolbarAdminComponent,
-    HelloAdminComponent
+    HelloAdminComponent,
+    CrearVacunasComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+    <div class="row h-100 justify-content-center align-items-center">
+     
+      <div class="col-12">
+  
+        <mat-card [ngStyle] = "{'height.px': this.innerHeight}">
+    
+          <mat-toolbar color="primary">Formulacio creacion de vacunas</mat-toolbar>
+      
+            <form class="crearVacunaForm" [formGroup]="crearVacunaForm" (ngSubmit)="crearVacunaSubmit()">
+    
+              <div class="d-flex flex-column">
+               
+                <mat-form-field appearance="fill">
+                  <mat-label>Nombre de la vacuna</mat-label>
+                  <input matInput placeholder="Ingrese nombre de la vacuna" value="" autocomplete="off" formControlName="nombre">
+                </mat-form-field>
+        
+                <button type="submit" mat-raised-button color="primary">Crear</button>
+                
+    
+              </div>
+      
+             
+      
+      
+            </form>
+      
+        </mat-card>
+  
+      </div>
+  
+      
+    </div>
