@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { VacunaInterface } from 'src/app/interfaces/vacuna-interface';
+import { VacunasService } from 'src/app/services/vacunas.service';
 
 @Component({
   selector: 'app-crear-vacunas',
@@ -13,7 +15,9 @@ export class CrearVacunasComponent implements OnInit {
     nombre: new FormControl('Moderna')
   });
 
-  constructor() {
+  constructor(
+    private vacunaService: VacunasService
+  ) {
     this.innerHeight = (window.innerHeight * 50) / 100;
     console.log(window.innerHeight);
 
@@ -30,9 +34,9 @@ export class CrearVacunasComponent implements OnInit {
   }
 
   crearVacunaSubmit(){
-    const data: any = this.crearVacunaForm.value;
+    const data: VacunaInterface = this.crearVacunaForm.value;
     console.log(data);
-    
+    this.vacunaService.CrearVacuna(data);
   }
 
 }
