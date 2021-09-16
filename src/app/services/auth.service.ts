@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { LoginInterface } from '../interfaces/login-interface';
 import jwt_decode from "jwt-decode";
 import { Router } from '@angular/router';
+import { NotificacionesService } from './notificaciones.service';
 
 
 @Injectable({
@@ -14,10 +15,12 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private notificacionesService: NotificacionesService
   ) { }
 
   login(data:LoginInterface){
+    this.notificacionesService.cargando("Iniciando Sesion");
     console.log("login start");
     this.http.post(`${environment.backendUrl}/autenticacion/login`, data).subscribe(
       (result:any) => {
@@ -27,12 +30,13 @@ export class AuthService {
         const tokendata = jwt_decode(result.Data);
         console.log(tokendata);
         localStorage.setItem('token', result.Data);
+        this.notificacionesService.todoBien(result.Message)
         this.router.navigate(['/admin']);
 
       },
       (err:any) => {
         console.log("OCURRIO UN ERROR");
-        
+        this.notificacionesService.error(err.error.Message);
         console.log(err);
 
       }

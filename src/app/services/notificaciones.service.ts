@@ -9,9 +9,9 @@ export class NotificacionesService {
 
   constructor() { }
 
-  cargando(){
+  cargando(mensaje: string){
     Swal.fire({
-      title: 'Realizando operacion',
+      title: mensaje,
       icon: 'info',
       html: 'Por favor, espere',
       timerProgressBar: true,
