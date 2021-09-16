@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VacunaInterface } from 'src/app/interfaces/vacuna-interface';
+import { NotificacionesService } from 'src/app/services/notificaciones.service';
 import { VacunasService } from 'src/app/services/vacunas.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class CrearVacunasComponent implements OnInit {
   constructor(
     private vacunaService: VacunasService
   ) {
-    this.innerHeight = (window.innerHeight * 50) / 100;
+    this.innerHeight = (window.innerHeight * 25) / 100;
     console.log(window.innerHeight);
 
   }
@@ -28,7 +29,7 @@ export class CrearVacunasComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.innerHeight = (window.innerHeight * 50) / 100;
+    this.innerHeight = (window.innerHeight * 25) / 100;
     console.log(this.innerHeight);
     
   }

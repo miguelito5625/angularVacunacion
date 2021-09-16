@@ -1,30 +1,39 @@
     <div class="row h-100 justify-content-center align-items-center">
      
-      <div class="col-9 col-sm-5 col-md-6 col-lg-6 col-xl-6">
+      <div class="col-9 col-sm-7 col-md-7 col-lg-7 col-xl-7">
   
-        <mat-card [ngStyle] = "{'height.px': this.innerHeight}">
+        <!-- <mat-card [ngStyle] = "{'height.px': this.innerHeight}"> -->
+          <mat-card>
     
           <mat-toolbar color="primary" style='font-size:110%;'>Formulacio creacion de vacunas</mat-toolbar>
-      
-            <form class="crearVacunaForm" [formGroup]="crearVacunaForm" (ngSubmit)="crearVacunaSubmit()">
+
+          <mat-card-content [ngStyle] = "{'height.px': this.innerHeight}">
+
+            <form class="d-flex align-items-center" style="height: 100%; padding: 20px;" [formGroup]="crearVacunaForm" (ngSubmit)="crearVacunaSubmit()">
+              
+              <div style="width: 100%;">
+
+                <div class="d-flex flex-column">
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Nombre de la vacuna</mat-label>
+                    <input matInput placeholder="Ingrese nombre de la vacuna" value="" autocomplete="off" formControlName="nombre">
+                  </mat-form-field>
     
-              <div class="d-flex flex-column" style="height: 100%; width: 100%;">
-               
-                <mat-form-field appearance="fill">
-                  <mat-label>Nombre de la vacuna</mat-label>
-                  <input matInput placeholder="Ingrese nombre de la vacuna" value="" autocomplete="off" formControlName="nombre">
-                </mat-form-field>
-        
+                  <button type="submit" mat-raised-button color="primary">Crear</button>
+
+                </div>
+
                 
-                <button type="submit" style="position: absolute; bottom: 10px; margin-left: auto; margin-right: auto; flex: auto; width: 90%;" mat-raised-button color="primary">Crear</button>
-                
-    
+
               </div>
-      
-             
-      
+              
       
             </form>
+
+          </mat-card-content>
+      
+          
       
         </mat-card>
   
