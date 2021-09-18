@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +21,7 @@ import { ToolbarAdminComponent } from './paginas/admin/toolbar-admin/toolbar-adm
 import {MatMenuModule} from '@angular/material/menu';
 import { HelloAdminComponent } from './paginas/admin/hello-admin/hello-admin.component';
 import { CrearVacunasComponent } from './paginas/admin/vacunas/crear-vacunas/crear-vacunas.component';
+import { CheckConnectionToBackendInterceptor } from './interceptors/check-connection-to-backend.interceptor';
 
 
 
@@ -47,7 +48,13 @@ import { CrearVacunasComponent } from './paginas/admin/vacunas/crear-vacunas/cre
     MatInputModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CheckConnectionToBackendInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

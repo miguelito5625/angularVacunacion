@@ -18,8 +18,8 @@ export class VacunasService {
     this.http.post(`${environment.backendUrl}/vacuna`, data).subscribe(
       (result:any) => {
         console.log("TODO BIEN");
-        
         console.log(result);
+        
       },
       (err:any) => {
         console.log("OCURRIO UN ERROR");

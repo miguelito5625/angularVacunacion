@@ -36,8 +36,14 @@ export class AuthService {
       },
       (err:any) => {
         console.log("OCURRIO UN ERROR");
-        this.notificacionesService.error(err.error.Message);
         console.log(err);
+
+        // if (err.status === 0) {
+        //   this.notificacionesService.error("No hay conexion hacia el servidor");
+        //   return;
+        // }
+
+        this.notificacionesService.error(err.error.Message);
 
       }
     );
