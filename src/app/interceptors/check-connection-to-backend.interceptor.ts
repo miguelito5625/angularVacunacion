@@ -24,6 +24,18 @@ export class CheckConnectionToBackendInterceptor implements HttpInterceptor {
           
         }
 
+        if (err.status === 404) {
+         
+          this.notificacionesService.error("Recurso no encontrado");
+          
+        }
+
+        if (err.status === 500) {
+         
+          this.notificacionesService.error("Error interno del servidor");
+          
+        }
+
         return throwError( err );
 
       })
