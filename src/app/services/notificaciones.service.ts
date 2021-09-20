@@ -9,7 +9,7 @@ export class NotificacionesService {
 
   constructor() { }
 
-  cargando(mensaje: string){
+  cargando(mensaje: string) {
     Swal.fire({
       title: mensaje,
       icon: 'info',
@@ -22,16 +22,18 @@ export class NotificacionesService {
     });
   }
 
-  todoBien(mensaje:string){
+  todoBien(mensaje: string) {
     Swal.fire({
       icon: 'success',
       title: mensaje,
-      showCloseButton: true,
+      timer: 2000,
+      timerProgressBar: true,
+      showConfirmButton: false,
       confirmButtonText: 'Entendido!',
     });
   }
 
-  async pregunta(): Promise<boolean>{
+  async pregunta(): Promise<boolean> {
     const darDeBaja = await Swal.fire({
       icon: 'info',
       title: '¿Reactivar empleado?',
@@ -47,7 +49,7 @@ export class NotificacionesService {
     return true;
   }
 
-  error(mensaje:string){
+  error(mensaje: string) {
     Swal.fire({
       title: 'Error!',
       text: mensaje,

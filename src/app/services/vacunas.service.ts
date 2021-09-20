@@ -17,14 +17,10 @@ export class VacunasService {
   CrearVacuna(data:VacunaInterface){
     this.http.post(`${environment.backendUrl}/vacuna`, data).subscribe(
       (result:any) => {
-        console.log("TODO BIEN");
-        console.log(result);
         
       },
       (err:any) => {
-        console.log("OCURRIO UN ERROR");
-        console.log(err);
-
+        
       }
     );
   }
