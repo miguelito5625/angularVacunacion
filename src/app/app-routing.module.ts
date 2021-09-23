@@ -4,6 +4,7 @@ import { AdministradorGuard } from './guards/administrador.guard';
 import { HelloAdminComponent } from './paginas/admin/hello-admin/hello-admin.component';
 import { PrincipalAdminComponent } from './paginas/admin/principal-admin/principal-admin.component';
 import { CrearVacunasComponent } from './paginas/admin/vacunas/crear-vacunas/crear-vacunas.component';
+import { ListarVacunasComponent } from './paginas/admin/vacunas/listar-vacunas/listar-vacunas.component';
 import { LoginPageComponent } from './paginas/login-page/login-page.component';
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path: 'vacunas/crear',
         component: CrearVacunasComponent
+      },
+      {
+        path: 'vacunas/listar',
+        component: ListarVacunasComponent
       },
       {
         path: '**',

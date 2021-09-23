@@ -22,7 +22,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { HelloAdminComponent } from './paginas/admin/hello-admin/hello-admin.component';
 import { CrearVacunasComponent } from './paginas/admin/vacunas/crear-vacunas/crear-vacunas.component';
 import { CheckConnectionToBackendInterceptor } from './interceptors/check-connection-to-backend.interceptor';
-
+import { ListarVacunasComponent } from './paginas/admin/vacunas/listar-vacunas/listar-vacunas.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { CheckConnectionToBackendInterceptor } from './interceptors/check-connec
     ToolbarAdminComponent,
     HelloAdminComponent,
     CrearVacunasComponent,
+    ListarVacunasComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,9 @@ import { CheckConnectionToBackendInterceptor } from './interceptors/check-connec
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     {

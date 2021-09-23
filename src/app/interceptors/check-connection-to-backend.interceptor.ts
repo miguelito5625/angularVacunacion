@@ -14,6 +14,8 @@ export class CheckConnectionToBackendInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+    this.notificacionesService.cargando("Procesando");
+
     return next.handle(req).pipe(
       tap(evt => {
         if (evt instanceof HttpResponse) {
@@ -50,7 +52,11 @@ export class CheckConnectionToBackendInterceptor implements HttpInterceptor {
 
         if (err.status === 500) {
 
-          this.notificacionesService.error("Error interno del servidor");
+          if (err.error.Message) {
+            this.notificacionesService.error(err.error.Message);
+          }else{
+            this.notificacionesService.error("Error interno del servidor");
+          }
 
         }
 
