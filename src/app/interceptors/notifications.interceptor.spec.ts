@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CheckConnectionToBackendInterceptor } from './check-connection-to-backend.interceptor';
+import { CheckConnectionToBackendInterceptor } from './notifications.interceptor';
 
 describe('CheckConnectionToBackendInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({

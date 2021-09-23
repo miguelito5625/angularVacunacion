@@ -21,7 +21,7 @@ import { ToolbarAdminComponent } from './paginas/admin/toolbar-admin/toolbar-adm
 import {MatMenuModule} from '@angular/material/menu';
 import { HelloAdminComponent } from './paginas/admin/hello-admin/hello-admin.component';
 import { CrearVacunasComponent } from './paginas/admin/vacunas/crear-vacunas/crear-vacunas.component';
-import { CheckConnectionToBackendInterceptor } from './interceptors/check-connection-to-backend.interceptor';
+import { CheckConnectionToBackendInterceptor } from './interceptors/notifications.interceptor';
 import { ListarVacunasComponent } from './paginas/admin/vacunas/listar-vacunas/listar-vacunas.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
